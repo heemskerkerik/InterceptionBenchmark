@@ -6,6 +6,10 @@ This small research project benchmarks between different IoC frameworks and thei
 * SimpleInjector with Castle.DynamicProxy
 * Castle.DynamicProxy stand-alone
 
+What is being benchmarked is as follows:
+* Creating or resolving `ISomething`;
+* Calling `ISomething.Foo` on the resulting object.
+
 A benchmark on my machine (i7 6700HQ, 16 GB) results in the following, YMMV:
 
 |                              Method |         Median |        StdDev |    Scaled | Place |
