@@ -5,6 +5,7 @@ This small research project benchmarks between different IoC frameworks and thei
 * Unity with Unity.Interception
 * SimpleInjector with Castle.DynamicProxy
 * Castle.DynamicProxy stand-alone
+* SimpleInjector with MethodTimer.Fody
 
 What is being benchmarked is as follows:
 * Creating or resolving `ISomething`;
@@ -15,11 +16,12 @@ A benchmark on my machine (i7 6700HQ, 16 GB) results in the following, YMMV:
 
 |                              Method |         Median |        StdDev |    Scaled | Place |
 |------------------------------------ |---------------: |--------------: |----------: |------: |
-|                          UsingUnity |    937.0814 ns |    29.9302 ns |    404.69 |     3 |
-|          UsingUnityWithInterception | 87,300.8914 ns | 4,284.5019 ns | 37,701.92 |     5 |
-|                            UsingNew |      2.3156 ns |     0.1674 ns |      1.00 |     1 |
-|                 UsingSimpleInjector |     51.0103 ns |     0.8151 ns |     22.03 |     2 |
-| UsingSimpleInjectorWithInterception |  3,935.7593 ns |    48.7990 ns |  1,699.70 |     4 |
-|         UsingDynamicProxyWithoutIoc |  3,839.2032 ns |    69.0370 ns |  1,658.01 |     4 |
+|                          UsingUnity |    960.5114 ns |    90.5483 ns |    428.82 |     4 |
+|          UsingUnityWithInterception | 87,563.0441 ns | 2,755.5152 ns | 39,092.13 |     6 |
+|                            UsingNew |      2.2399 ns |     0.1733 ns |      1.00 |     1 |
+|                 UsingSimpleInjector |     57.2194 ns |     0.5549 ns |     25.55 |     2 |
+| UsingSimpleInjectorWithInterception |  4,299.6493 ns |    34.1911 ns |  1,919.56 |     5 |
+|         UsingDynamicProxyWithoutIoc |  4,170.4537 ns |    61.0938 ns |  1,861.88 |     5 |
+|         UsingSimpleInjectorWithFody |    461.4207 ns |    20.0582 ns |    206.00 |     3 |
 
 Benchmarking is done using the excellent [BenchmarkDotNet](https://github.com/PerfDotNet/BenchmarkDotNet) package.
