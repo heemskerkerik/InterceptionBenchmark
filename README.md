@@ -9,19 +9,19 @@ This small research project benchmarks between different IoC frameworks and thei
 
 What is being benchmarked is as follows:
 * Creating or resolving `ISomething`;
-* Calling `ISomething.Foo` on the resulting object.
-* When intercepting, timing the duration of the original method using a `Stopwatch`. The result is not logged.
+* Calling `ISomething.Foo` on the resulting object;
+* Timing the duration of the original method using a `Stopwatch`, either via interception or encapsulation (in a `TimingSomething`).
 
 A benchmark on my machine (i7 6700HQ, 16 GB) results in the following, YMMV:
 
-|                              Method |         Median |        StdDev |    Scaled | Place |
-|------------------------------------ |---------------: |--------------: |----------: |------: |
-|                          UsingUnity |    960.5114 ns |    90.5483 ns |    428.82 |     4 |
-|          UsingUnityWithInterception | 87,563.0441 ns | 2,755.5152 ns | 39,092.13 |     6 |
-|                            UsingNew |      2.2399 ns |     0.1733 ns |      1.00 |     1 |
-|                 UsingSimpleInjector |     57.2194 ns |     0.5549 ns |     25.55 |     2 |
-| UsingSimpleInjectorWithInterception |  4,299.6493 ns |    34.1911 ns |  1,919.56 |     5 |
-|         UsingDynamicProxyWithoutIoc |  4,170.4537 ns |    61.0938 ns |  1,861.88 |     5 |
-|         UsingSimpleInjectorWithFody |    461.4207 ns |    20.0582 ns |    206.00 |     3 |
+Method |         Median |        StdDev |   Scaled | Place |
+------------------------------------ |--------------: |-------------: |--------: |-----: |
+UsingUnity |  1,142.6636 ns |    35.9375 ns |    18.70 |     4 |
+UsingUnityWithInterception | 89,725.4661 ns | 2,300.6833 ns | 1,468.33 |     6 |
+UsingNew |     61.1070 ns |     4.6672 ns |     1.00 |     1 |
+UsingSimpleInjector |    126.9396 ns |     2.2056 ns |     2.08 |     2 |
+UsingSimpleInjectorWithInterception |  4,573.0595 ns |    94.7079 ns |    74.84 |     5 |
+UsingDynamicProxyWithoutIoc |  4,406.1171 ns |    65.0494 ns |    72.10 |     5 |
+UsingSimpleInjectorWithFody |    499.8958 ns |    31.3847 ns |     8.18 |     3 |
 
 Benchmarking is done using the excellent [BenchmarkDotNet](https://github.com/PerfDotNet/BenchmarkDotNet) package.
