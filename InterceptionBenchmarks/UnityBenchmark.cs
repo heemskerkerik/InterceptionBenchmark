@@ -10,7 +10,7 @@ namespace InterceptionBenchmarks
         {
             _container = new UnityContainer();
 
-            _container.RegisterType<ISomething, Something>();
+            _container.RegisterType<ISomething, TimingSomething>(new InjectionConstructor(new Something()));
         }
 
         public void Run()

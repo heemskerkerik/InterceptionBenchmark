@@ -11,6 +11,7 @@ namespace InterceptionBenchmarks
             _container = new Container();
 
             _container.Register<ISomething, Something>();
+            _container.RegisterDecorator<ISomething, TimingSomething>(Lifestyle.Transient);
         }
 
         public void Run()

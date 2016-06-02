@@ -97,6 +97,7 @@
     <Compile Include="SimpleInjectorWithInterceptionBenchmark.cs" />
     <Compile Include="SingleMethodMatchingRule.cs" />
     <Compile Include="Something.cs" />
+    <Compile Include="TimingSomething.cs" />
     <Compile Include="UnityBenchmark.cs" />
     <Compile Include="UnityCallHandler.cs" />
     <Compile Include="UnityWithInterceptionBenchmark.cs" />
