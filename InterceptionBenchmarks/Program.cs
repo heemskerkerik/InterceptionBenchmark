@@ -49,7 +49,7 @@ namespace InterceptionBenchmarks
         [Benchmark(Baseline = true)]
         public void UsingNew()
         {
-            var something = new Something();
+            var something = new TimingSomething(new Something());
 
             something.Foo();
         }
