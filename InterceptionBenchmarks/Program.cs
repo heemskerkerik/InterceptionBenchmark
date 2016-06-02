@@ -77,9 +77,5 @@ namespace InterceptionBenchmarks
         {
             _simpleInjectorWithFody.Run();
         }
-
-        {
-
-        }
     }
 }
