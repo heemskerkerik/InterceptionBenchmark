@@ -9,6 +9,7 @@ This small research project benchmarks between different IoC frameworks and thei
 What is being benchmarked is as follows:
 * Creating or resolving `ISomething`;
 * Calling `ISomething.Foo` on the resulting object.
+* When intercepting, timing the duration of the original method using a `Stopwatch`. The result is not logged.
 
 A benchmark on my machine (i7 6700HQ, 16 GB) results in the following, YMMV:
 
