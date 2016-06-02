@@ -1,6 +1,8 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 
+using Castle.DynamicProxy;
+
 namespace InterceptionBenchmarks
 {
     class Program
@@ -20,8 +22,6 @@ namespace InterceptionBenchmarks
         private UnityWithInterceptionBenchmark _unityWithInterception;
         private DynamicProxyWithoutIocBenchmark _dynamicProxyWithoutIoc;
         private SimpleInjectorWithFodyBenchmark _simpleInjectorWithFody;
-        private AutofacBenchmark _autofac;
-        private AutofacWithInterceptionBenchmark _autofacWithInterception;
 
         [Setup]
         public void Initialize()
@@ -32,8 +32,6 @@ namespace InterceptionBenchmarks
             _simpleInjectorWithInterception = new SimpleInjectorWithInterceptionBenchmark();
             _dynamicProxyWithoutIoc = new DynamicProxyWithoutIocBenchmark();
             _simpleInjectorWithFody = new SimpleInjectorWithFodyBenchmark();
-            _autofac = new AutofacBenchmark();
-            _autofacWithInterception = new AutofacWithInterceptionBenchmark();
         }
 
         [Benchmark]
@@ -80,16 +78,8 @@ namespace InterceptionBenchmarks
             _simpleInjectorWithFody.Run();
         }
 
-        [Benchmark]
-        public void UsingAutofac()
         {
-            _autofac.Run();
-        }
 
-        [Benchmark]
-        public void UsingAutofacWithInterception()
-        {
-            _autofacWithInterception.Run();
         }
     }
 }
