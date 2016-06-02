@@ -24,4 +24,10 @@ UsingSimpleInjectorWithInterception |  4,573.0595 ns |    94.7079 ns |    74.84 
 UsingDynamicProxyWithoutIoc |  4,406.1171 ns |    65.0494 ns |    72.10 |     5 |
 UsingSimpleInjectorWithFody |    499.8958 ns |    31.3847 ns |     8.18 |     3 |
 
+For reference:
+
+* A nanosecond (ns) is a billionth of a second;
+* A microsecond (us or µs) is 1,000 nanoseconds;
+* A millisecond (ms) is 1,000 microseconds or 1,000,000 nanoseconds.
+
 Benchmarking is done using the excellent [BenchmarkDotNet](https://github.com/PerfDotNet/BenchmarkDotNet) package.
