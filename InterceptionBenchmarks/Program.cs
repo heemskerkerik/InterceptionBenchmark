@@ -21,10 +21,7 @@ namespace InterceptionBenchmarks
         private UnityBenchmark _unity;
         private UnityWithInterceptionBenchmark _unityWithInterception;
         private DynamicProxyWithoutIocBenchmark _dynamicProxyWithoutIoc;
-
-        public Benchmark()
-        {
-        }
+        private SimpleInjectorWithFodyBenchmark _simpleInjectorWithFody;
 
         [Setup]
         public void Initialize()
@@ -34,6 +31,7 @@ namespace InterceptionBenchmarks
             _simpleInjector = new SimpleInjectorBenchmark();
             _simpleInjectorWithInterception = new SimpleInjectorWithInterceptionBenchmark();
             _dynamicProxyWithoutIoc = new DynamicProxyWithoutIocBenchmark();
+            _simpleInjectorWithFody = new SimpleInjectorWithFodyBenchmark();
         }
 
         [Benchmark]
@@ -73,24 +71,15 @@ namespace InterceptionBenchmarks
         {
             _dynamicProxyWithoutIoc.Run();
         }
-    }
 
-    internal sealed class DynamicProxyWithoutIocBenchmark
-    {
-        private static readonly ProxyGenerator _generator = new ProxyGenerator();
-
-        public void Run()
+        [Benchmark]
+        public void UsingSimpleInjectorWithFody()
         {
-            var something = CreateProxy();
-
-            something.Foo();
+            _simpleInjectorWithFody.Run();
         }
 
-        private ISomething CreateProxy()
         {
-            var something = new Something();
 
-            return _generator.CreateInterfaceProxyWithTarget<ISomething>(something, new DynamicProxyInterceptor());
         }
     }
 }
