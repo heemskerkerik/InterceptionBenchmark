@@ -6,6 +6,7 @@ This small research project benchmarks between different IoC frameworks and thei
 * SimpleInjector with Castle.DynamicProxy
 * Castle.DynamicProxy stand-alone
 * SimpleInjector with MethodTimer.Fody
+* Autofac with Castle.DynamicProxy
 
 What is being benchmarked is as follows:
 * Creating or resolving `ISomething`;
