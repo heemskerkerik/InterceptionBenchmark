@@ -16,13 +16,15 @@ A benchmark on my machine (i7 6700HQ, 16 GB) results in the following, YMMV:
 
 Method |         Median |        StdDev |   Scaled | Place |
 ------------------------------------ |--------------: |-------------: |--------: |-----: |
-UsingUnity |  1,142.6636 ns |    35.9375 ns |    18.70 |     4 |
-UsingUnityWithInterception | 89,725.4661 ns | 2,300.6833 ns | 1,468.33 |     6 |
-UsingNew |     61.1070 ns |     4.6672 ns |     1.00 |     1 |
-UsingSimpleInjector |    126.9396 ns |     2.2056 ns |     2.08 |     2 |
-UsingSimpleInjectorWithInterception |  4,573.0595 ns |    94.7079 ns |    74.84 |     5 |
-UsingDynamicProxyWithoutIoc |  4,406.1171 ns |    65.0494 ns |    72.10 |     5 |
-UsingSimpleInjectorWithFody |    499.8958 ns |    31.3847 ns |     8.18 |     3 |
+UsingNew |     57.8832 ns |     0.6876 ns |     1.00 |     1 |
+UsingSimpleInjector |    131.6701 ns |     4.4298 ns |     2.27 |     2 |
+UsingSimpleInjectorWithFody |    485.0658 ns |     6.5156 ns |     8.38 |     3 |
+UsingUnity |  1,104.6204 ns |    38.5160 ns |    19.08 |     4 |
+UsingAutofac |  1,288.5287 ns |    20.2904 ns |    22.26 |     5 |
+UsingDynamicProxyWithoutIoc |  4,417.7852 ns |   124.4113 ns |    76.32 |     6 |
+UsingSimpleInjectorWithInterception |  4,865.6226 ns |   120.3728 ns |    84.06 |     7 |
+UsingAutofacWithInterception | 16,533.7070 ns |   444.3598 ns |   285.64 |     8 |
+UsingUnityWithInterception | 89,815.6019 ns | 1,188.6651 ns | 1,551.67 |     9 |
 
 For reference:
 
