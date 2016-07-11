@@ -30,7 +30,7 @@ UsingUnityWithInterception | 89 815,6019 ns | 1 188,6651 ns | 1 551,67 |     9 |
 For reference:
 
 * A nanosecond (ns) is a billionth of a second;
-* A microsecond (us or µs) is 1,000 nanoseconds;
-* A millisecond (ms) is 1,000 microseconds or 1,000,000 nanoseconds.
+* A microsecond (us or µs) is 1 000 nanoseconds;
+* A millisecond (ms) is 1 000 microseconds or 1 000 000 nanoseconds.
 
 Benchmarking is done using the excellent [BenchmarkDotNet](https://github.com/PerfDotNet/BenchmarkDotNet) package.
