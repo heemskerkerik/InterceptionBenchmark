@@ -17,6 +17,7 @@ namespace InterceptionBenchmarks
         private AutofacDecoratorBenchmark _autofacWithDecorator;
         private AutofacDynamicProxyBenchmark _autofacWithDynamicProxy;
         private NoDIDynamicProxyBenchmark _noDIWithDynamicProxy;
+        private NoDILinFuBenchmark _noDIWithLinFu;
         private NinjectDecoratorBenchmark _ninjectWithDecorator;
         private NinjectDynamicProxyBenchmark _ninjectWithDynamicProxy;
         private NinjectLinFuBenchmark _ninjectWithLinFu;
@@ -33,6 +34,7 @@ namespace InterceptionBenchmarks
             _simpleInjectorWithDecorator = new SimpleInjectorDecoratorBenchmark();
             _simpleInjectorWithDynamicProxy = new SimpleInjectorDynamicProxyBenchmark();
             _noDIWithDynamicProxy = new NoDIDynamicProxyBenchmark();
+            _noDIWithLinFu = new NoDILinFuBenchmark();
             _autofacWithDecorator = new AutofacDecoratorBenchmark();
             _autofacWithDynamicProxy = new AutofacDynamicProxyBenchmark();
             _ninjectWithDecorator = new NinjectDecoratorBenchmark();
@@ -76,6 +78,12 @@ namespace InterceptionBenchmarks
         public void UsingDynamicProxyWithoutIoc()
         {
             _noDIWithDynamicProxy.Run();
+        }
+
+        [Benchmark]
+        public void UsingLinFuWithoutIoc()
+        {
+            _noDIWithLinFu.Run();
         }
 
         [Benchmark]

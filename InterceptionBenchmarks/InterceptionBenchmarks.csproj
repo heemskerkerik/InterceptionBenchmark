@@ -189,12 +189,14 @@
     <Compile Include="AutofacDecoratorBenchmark.cs" />
     <Compile Include="AutofacDynamicProxyBenchmark.cs" />
     <Compile Include="DynamicProxyInterceptor.cs" />
+    <Compile Include="LinFuInterceptor.cs" />
     <Compile Include="NoDIDynamicProxyBenchmark.cs" />
     <Compile Include="ISomething.cs" />
     <Compile Include="NinjectDecoratorBenchmark.cs" />
     <Compile Include="NinjectInterceptor.cs" />
     <Compile Include="NinjectDynamicProxyBenchmark.cs" />
     <Compile Include="NinjectLinFuBenchmark.cs" />
+    <Compile Include="NoDILinFuBenchmark.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleInjectorDecoratorBenchmark.cs" />
