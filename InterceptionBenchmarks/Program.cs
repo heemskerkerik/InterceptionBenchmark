@@ -43,7 +43,7 @@ namespace InterceptionBenchmarks
         }
 
         [Benchmark]
-        public void UsingUnity()
+        public void UnityDecorator()
         {
             _unityWithDecorator.Run();
         }
@@ -55,7 +55,7 @@ namespace InterceptionBenchmarks
         }
 
         [Benchmark(Baseline = true)]
-        public void UsingNew()
+        public void NoDIDecorator()
         {
             var something = new TimingSomething(new Something());
 
@@ -63,55 +63,55 @@ namespace InterceptionBenchmarks
         }
 
         [Benchmark]
-        public void UsingSimpleInjector()
+        public void SimpleInjectorDecorator()
         {
             _simpleInjectorWithDecorator.Run();
         }
 
         [Benchmark]
-        public void UsingSimpleInjectorWithInterception()
+        public void SimpleInjectorDynamicProxy()
         {
             _simpleInjectorWithDynamicProxy.Run();
         }
 
         [Benchmark]
-        public void UsingDynamicProxyWithoutIoc()
+        public void NoDIDynamicProxy()
         {
             _noDIWithDynamicProxy.Run();
         }
 
         [Benchmark]
-        public void UsingLinFuWithoutIoc()
+        public void NoDILinFu()
         {
             _noDIWithLinFu.Run();
         }
 
         [Benchmark]
-        public void UsingAutofac()
+        public void AutofacDecorator()
         {
             _autofacWithDecorator.Run();
         }
 
         [Benchmark]
-        public void UsingAutofacWithInterception()
+        public void AutofacDynamicProxy()
         {
             _autofacWithDynamicProxy.Run();
         }
 
         [Benchmark]
-        public void UsingNinject()
+        public void NinjectDecorator()
         {
             _ninjectWithDecorator.Run();
         }
 
         [Benchmark]
-        public void UsingNinjectWithDynamicProxyInterceptorInterception()
+        public void NinjectDynamicProxy()
         {
             _ninjectWithDynamicProxy.Run();
         }
 
         [Benchmark]
-        public void UsingNinjectWithLinFuInterceptorInterception()
+        public void NinjectLinFu()
         {
             _ninjectWithLinFu.Run();
         }
