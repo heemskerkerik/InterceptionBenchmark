@@ -2,7 +2,7 @@
 
 namespace InterceptionBenchmarks
 {
-    internal sealed class DynamicProxyWithoutIocBenchmark
+    internal sealed class NoDIDynamicProxyBenchmark
     {
         private static readonly ProxyGenerator _generator = new ProxyGenerator();
 

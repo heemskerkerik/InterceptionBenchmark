@@ -14,38 +14,42 @@ namespace InterceptionBenchmarks
     [Config("columns=Place")]
     public class Benchmark
     {
-        private AutofacBenchmark _autofac;
-        private AutofacWithInterceptionBenchmark _autofacWithInterception;
-        private DynamicProxyWithoutIocBenchmark _dynamicProxyWithoutIoc;
-        private SimpleInjectorBenchmark _simpleInjector;
-        private SimpleInjectorWithFodyBenchmark _simpleInjectorWithFody;
-        private SimpleInjectorWithInterceptionBenchmark _simpleInjectorWithInterception;
-        private UnityBenchmark _unity;
-        private UnityWithInterceptionBenchmark _unityWithInterception;
+        private AutofacDecoratorBenchmark _autofacWithDecorator;
+        private AutofacDynamicProxyBenchmark _autofacWithDynamicProxy;
+        private NoDIDynamicProxyBenchmark _noDIWithDynamicProxy;
+        private NinjectDecoratorBenchmark _ninjectWithDecorator;
+        private NinjectDynamicProxyBenchmark _ninjectWithDynamicProxy;
+        private NinjectLinFuBenchmark _ninjectWithLinFu;
+        private SimpleInjectorDecoratorBenchmark _simpleInjectorWithDecorator;
+        private SimpleInjectorDynamicProxyBenchmark _simpleInjectorWithDynamicProxy;
+        private UnityDecoratorBenchmark _unityWithDecorator;
+        private UnityInterceptionBenchmark _unityWithUnityInterception;
 
         [Setup]
         public void Initialize()
         {
-            _unity = new UnityBenchmark();
-            _unityWithInterception = new UnityWithInterceptionBenchmark();
-            _simpleInjector = new SimpleInjectorBenchmark();
-            _simpleInjectorWithInterception = new SimpleInjectorWithInterceptionBenchmark();
-            _dynamicProxyWithoutIoc = new DynamicProxyWithoutIocBenchmark();
-            _simpleInjectorWithFody = new SimpleInjectorWithFodyBenchmark();
-            _autofac = new AutofacBenchmark();
-            _autofacWithInterception = new AutofacWithInterceptionBenchmark();
+            _unityWithDecorator = new UnityDecoratorBenchmark();
+            _unityWithUnityInterception = new UnityInterceptionBenchmark();
+            _simpleInjectorWithDecorator = new SimpleInjectorDecoratorBenchmark();
+            _simpleInjectorWithDynamicProxy = new SimpleInjectorDynamicProxyBenchmark();
+            _noDIWithDynamicProxy = new NoDIDynamicProxyBenchmark();
+            _autofacWithDecorator = new AutofacDecoratorBenchmark();
+            _autofacWithDynamicProxy = new AutofacDynamicProxyBenchmark();
+            _ninjectWithDecorator = new NinjectDecoratorBenchmark();
+            _ninjectWithDynamicProxy = new NinjectDynamicProxyBenchmark();
+            _ninjectWithLinFu = new NinjectLinFuBenchmark();
         }
 
         [Benchmark]
         public void UsingUnity()
         {
-            _unity.Run();
+            _unityWithDecorator.Run();
         }
 
         [Benchmark]
         public void UsingUnityWithInterception()
         {
-            _unityWithInterception.Run();
+            _unityWithUnityInterception.Run();
         }
 
         [Benchmark(Baseline = true)]
@@ -59,37 +63,49 @@ namespace InterceptionBenchmarks
         [Benchmark]
         public void UsingSimpleInjector()
         {
-            _simpleInjector.Run();
+            _simpleInjectorWithDecorator.Run();
         }
 
         [Benchmark]
         public void UsingSimpleInjectorWithInterception()
         {
-            _simpleInjectorWithInterception.Run();
+            _simpleInjectorWithDynamicProxy.Run();
         }
 
         [Benchmark]
         public void UsingDynamicProxyWithoutIoc()
         {
-            _dynamicProxyWithoutIoc.Run();
-        }
-
-        [Benchmark]
-        public void UsingSimpleInjectorWithFody()
-        {
-            _simpleInjectorWithFody.Run();
+            _noDIWithDynamicProxy.Run();
         }
 
         [Benchmark]
         public void UsingAutofac()
         {
-            _autofac.Run();
+            _autofacWithDecorator.Run();
         }
 
         [Benchmark]
         public void UsingAutofacWithInterception()
         {
-            _autofacWithInterception.Run();
+            _autofacWithDynamicProxy.Run();
+        }
+
+        [Benchmark]
+        public void UsingNinject()
+        {
+            _ninjectWithDecorator.Run();
+        }
+
+        [Benchmark]
+        public void UsingNinjectWithDynamicProxyInterceptorInterception()
+        {
+            _ninjectWithDynamicProxy.Run();
+        }
+
+        [Benchmark]
+        public void UsingNinjectWithLinFuInterceptorInterception()
+        {
+            _ninjectWithLinFu.Run();
         }
     }
 }

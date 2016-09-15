@@ -9,6 +9,10 @@
             _x++;
         }
 
+        public void Bar()
+        {
+        }
+
         public void Blue()
         {
         }

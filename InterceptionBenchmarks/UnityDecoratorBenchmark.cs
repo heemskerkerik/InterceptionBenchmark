@@ -2,11 +2,11 @@
 
 namespace InterceptionBenchmarks
 {
-    internal sealed class UnityBenchmark
+    internal sealed class UnityDecoratorBenchmark
     {
         private readonly UnityContainer _container;
 
-        public UnityBenchmark()
+        public UnityDecoratorBenchmark()
         {
             _container = new UnityContainer();
 

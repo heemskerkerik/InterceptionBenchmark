@@ -2,16 +2,16 @@
 
 namespace InterceptionBenchmarks
 {
-    internal sealed class SimpleInjectorWithInterceptionBenchmark
+    internal sealed class SimpleInjectorDecoratorBenchmark
     {
         private readonly Container _container;
 
-        public SimpleInjectorWithInterceptionBenchmark()
+        public SimpleInjectorDecoratorBenchmark()
         {
             _container = new Container();
 
-            _container.InterceptWith<DynamicProxyInterceptor>(type => type == typeof(Something));
-            _container.Register<ISomething, Something>(Lifestyle.Transient);
+            _container.Register<ISomething, Something>();
+            _container.RegisterDecorator<ISomething, TimingSomething>(Lifestyle.Transient);
         }
 
         public void Run()

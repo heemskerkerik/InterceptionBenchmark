@@ -20,6 +20,10 @@ namespace InterceptionBenchmarks
             stopwatch.Stop();
         }
 
+        public void Bar()
+        {
+        }
+
         public void Blue()
         {
         }

@@ -3,11 +3,11 @@ using Microsoft.Practices.Unity.InterceptionExtension;
 
 namespace InterceptionBenchmarks
 {
-    internal sealed class UnityWithInterceptionBenchmark
+    internal sealed class UnityInterceptionBenchmark
     {
         private readonly UnityContainer _container;
 
-        public UnityWithInterceptionBenchmark()
+        public UnityInterceptionBenchmark()
         {
             _container = new UnityContainer();
 

@@ -17,15 +17,20 @@ A benchmark on my machine (i7 6700HQ, 16 GB) results in the following, YMMV:
 
 Method |         Median |        StdDev |   Scaled | Place |
 ------------------------------------ |--------------: |-------------: |--------: |-----: |
-UsingNew |     57,8832 ns |     0,6876 ns |     1,00 |     1 |
-UsingSimpleInjector |    131,6701 ns |     4,4298 ns |     2,27 |     2 |
-UsingSimpleInjectorWithFody |    485,0658 ns |     6,5156 ns |     8,38 |     3 |
-UsingUnity |  1 104,6204 ns |    38,5160 ns |    19,08 |     4 |
-UsingAutofac |  1 288,5287 ns |    20,2904 ns |    22,26 |     5 |
-UsingDynamicProxyWithoutIoc |  4 417,7852 ns |   124,4113 ns |    76,32 |     6 |
-UsingSimpleInjectorWithInterception |  4 865,6226 ns |   120,3728 ns |    84,06 |     7 |
-UsingAutofacWithInterception | 16 533,7070 ns |   444,3598 ns |   285,64 |     8 |
-UsingUnityWithInterception | 89 815,6019 ns | 1 188,6651 ns | 1 551,67 |     9 |
+UsingNew |     53,0475 ns |     1,2048 ns |     1,00 |     1 |
+UsingSimpleInjector |    119,8636 ns |     2,9011 ns |     2,26 |     2 |
+UsingSimpleInjectorWithFody |    456,7976 ns |    16,0940 ns |     8,61 |     3 |
+UsingUnity |    995,3501 ns |    53,7859 ns |    18,76 |     4 |
+UsingAutofac |  1 192,0763 ns |    72,7590 ns |    22,47 |     5 |
+UsingDynamicProxyWithoutIoc |  4 219,4526 ns |    44,2089 ns |    79,54 |     6 |
+UsingSimpleInjectorWithInterception |  4 605,1258 ns |   329,7238 ns |    86,81 |     7 |
+UsingNinjectWithLinFuMethodInterception | 10 071,2066 ns |   573,8851 ns |   189,85 |     8 |
+UsingNinjectWithDynamicProxyMethodInterception | 10 239,9290 ns |   334,3963 ns |   193,03 |     8 |
+UsingNinject | 14 638,0324 ns | 1 104,9395 ns |   275,94 |     9 |
+UsingAutofacWithInterception | 15 580,4160 ns |   800,6822 ns |   293,71 |     9 |
+UsingNinjectWithLinFuInterceptorInterception | 16 633,1512 ns |   835,7362 ns |   313,55 |     9 |
+UsingNinjectWithDynamicProxyInterceptorInterception | 20 548,4465 ns | 1 030,3296 ns |   387,36 |    10 |
+UsingUnityWithInterception | 82 962,1605 ns | 3 280,7292 ns | 1 563,92 |    11 |
 
 For reference:
 

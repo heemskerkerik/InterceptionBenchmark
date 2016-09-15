@@ -1,17 +1,18 @@
 ﻿using Autofac;
+using Autofac.Extras.DynamicProxy;
 
 namespace InterceptionBenchmarks
 {
-    internal sealed class AutofacBenchmark
+    internal sealed class AutofacDynamicProxyBenchmark
     {
         private readonly IContainer _container;
 
-        public AutofacBenchmark()
+        public AutofacDynamicProxyBenchmark()
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<Something>().Named<ISomething>("inner");
-            builder.RegisterDecorator<ISomething>((c, inner) => new TimingSomething(inner), fromKey:"inner");
+            builder.RegisterType<Something>().As<ISomething>().EnableInterfaceInterceptors();
+            builder.Register(c => new DynamicProxyInterceptor());
 
             _container = builder.Build();
         }
