@@ -49,7 +49,7 @@ namespace InterceptionBenchmarks
         }
 
         [Benchmark]
-        public void UsingUnityWithInterception()
+        public void UnityUnityInterception()
         {
             _unityWithUnityInterception.Run();
         }
